@@ -5,7 +5,6 @@ import { router } from "./router";
 import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import './index.css'
-import LoginPage from './components/loginPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
