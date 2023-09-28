@@ -27,7 +27,7 @@ export const getNoteById = async (req, res) => {
 }
 
 export const addNote = async (req, res) => { 
-    const note = req.body
+    const note = req.query
     const newNote = new Note({...note})
 
     try {
