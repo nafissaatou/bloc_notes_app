@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./loginPage.css"
 
-
 const schema = yup.object().shape({
 	email: yup.string().email().required('Email obligatoire'),
 	password: yup.string().min(3, 'Il faut au moins 4 caracteres').required(),
@@ -16,6 +15,7 @@ export default function LoginPage() {
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		resolver: yupResolver(schema)
 	});
+
 	const navigate = useNavigate();
 	const [login, { data, isLoading, isSuccess, isError, error }] = useLoginMutation();
 	useEffect(() => {

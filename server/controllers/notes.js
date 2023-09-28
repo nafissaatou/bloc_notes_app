@@ -7,7 +7,7 @@ export const getNotes = async (req, res) => {
     const skip = (page - 1) * limit;
 
     try {
-        const notes = await Note.find().skip(skip).limit(limit);
+        const notes = await Note.find();
         const response = { page, limit, data: notes };
         res.status(200).json(response);
     } catch (error) {
@@ -27,7 +27,7 @@ export const getNoteById = async (req, res) => {
 }
 
 export const addNote = async (req, res) => { 
-    const note = req.query
+    const note = req.body
     const newNote = new Note({...note})
 
     try {
